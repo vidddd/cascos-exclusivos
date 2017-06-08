@@ -1,0 +1,17 @@
+{
+        "name": "vidddd/cascos",
+        "authors": [
+            {
+                "name": "David Alvarez",
+                "email": "david.alvarez@tbwa.com"
+            }
+        ],
+        "require": {
+            "monolog/monolog": "1.0.*",
+            "twig/twig": "~1.0",
+            "twbs/bootstrap": "^3.3",
+            "joshcam/mysqli-database-class": "dev-master",
+            "phpmailer/phpmailer": "^5.2",
+            "codeguy/upload": "^1.3"
+        }
+    }
