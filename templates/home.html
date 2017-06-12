@@ -2,5 +2,23 @@
 
 {% block content %}
    <h1>Home</h1>
+<form class="bs-example" id="form1" method="post" action="index.php">
+  <div class="input-group">
+     <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Nombre" required aria-describedby="sizing-addon1">
+  </div> <br>
+  <div class="input-group">
+     <input type="text" name="apellidos" id="apellidos" class="form-control" placeholder="Apellidos" required aria-describedby="sizing-addon1">
+  </div> <br>
+  <div class="input-group">
+     <input type="email" name="email" id="email" class="form-control" placeholder="Email" required aria-describedby="sizing-addon1">
+  </div> <br>
+  <input type="button" id="subir" value="Subir foto" />
 
+
+  <div id="cropContainer"></div>
+
+    <input type="text" id="cropOutput" name="cropOutput" required style="" /><br />
+
+    <input type="submit" name="submit" value="Enviar" />
+ </form>
 {% endblock %}

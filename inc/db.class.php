@@ -7,22 +7,28 @@ class Database{
     {
         $this->db = new MysqliDb (HOST,USER,PASSWORD,DATABASE);
     }
-    /*
-     public function insertaPersona($persona, $email, $telefono, $lugarid, $personas, $comentarios){
+
+     public function insertaParticipacion($nombre, $apellidos, $email, $foto){
         $ok = false;
-        $data = Array ("persona" => $persona,
+        $data = Array ("nombre" => $nombre,
+                 "apellidos" => $apellidos,
                  "email" => $email,
-                 "telefono" => $telefono,
-                 "lugarid" => $lugarid,
-                 "personas" => $personas,
-                 "comentarios" => $comentarios,
+                 "foto" => $foto
                  );
-          $id = $this->db->insert ('personas', $data);
+          $id = $this->db->insert ('participaciones', $data);
           if($id){
                return $id;
           } else {
               echo 'insert failed: ' . $this->db->getLastError(); die;
           }
       }
-       */
+      
+      public function existeEmail($email) {
+             $ents = $this->db->rawQueryOne('select * from participaciones where email=?', Array($email));
+             if(!empty($ents)){
+                 return true;
+             } else {
+                 return false;
+             }
+      }
 }
