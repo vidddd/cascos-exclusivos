@@ -1,0 +1,500 @@
+@charset "utf-8";
+
+body{
+	background-color: #fff;
+    background-image: url("../images/bg_general.jpg");
+    background-position:center top;
+	background-attachment:fixed;
+    background-repeat: no-repeat;
+    color: #000;
+   /*font-family: "Oswald",verdana,arial;*/
+	font-family:"Fjalla One",verdana,arial;
+    font-size: 23px;
+    font-weight: 500;
+    line-height: 32px;
+    margin: 0;
+    padding: 0;
+}
+
+img, div{
+	margin:0;
+	padding:0;
+	border:none 0;	
+}
+
+#wrapper{
+	width:810px;
+	height:auto;
+	background-color:#fff;
+	background-image:url(../images/bg_wrapper.jpg);
+    background-position: center top;
+    background-repeat: no-repeat;
+	background-size:100% auto;
+	-webkit-box-shadow: 6px 24px 92px 10px rgba(139,150,176,1);
+	-moz-box-shadow: 6px 24px 92px 10px rgba(139,150,176,1);
+	box-shadow: 6px 24px 92px 10px rgba(139,150,176,1);
+	left: 50%;
+    margin: 0 0 0 -405px;
+    position: absolute;
+    top: 0;
+}
+#cabecera, #pie{
+	float:left;
+	width:100%;
+	height:auto;	
+}
+#cabecera{
+	padding-bottom:30px;	
+}
+#cabecera img, #pie img{
+	float:left;
+	width:100%;	
+}
+
+.pagina{
+	width:100%;
+	height:auto;
+	float:left;
+	text-align:center;
+	padding:20px 0;	
+}
+
+h1{
+	font-size: 35px;
+    line-height: 40px;
+    margin: 0 auto 30px;
+	letter-spacing:0.5px;	
+}
+h2{
+	font-size: 32px;
+    line-height: 40px;
+    margin: 0 auto 30px;
+	letter-spacing:0.5px;
+	text-transform:uppercase;
+}
+p{
+	margin: 0 auto 20px;
+    width: 90%;
+}
+
+.mini{
+	font-size:19px;
+	line-height:25px;
+	font-weight:600;	
+}
+.mini sup{
+	font-size:15px;
+}
+.boton{
+	border-radius: 15px;
+    color: #fff;
+    display: inherit;
+    margin: 0 auto 20px;
+    padding: 10px 0 8px;
+    text-decoration: none;
+    width: 260px;
+	text-transform:uppercase;
+	cursor:pointer;
+}
+.boton2{
+	border-radius: 15px;
+    color: #fff;
+    display: inline-block;
+    margin: 0 10px 20px;
+    padding: 10px 0 8px;
+    text-decoration: none;
+    width: 260px;
+	text-transform:uppercase;
+	cursor:pointer;
+}
+.rojo{
+	background-color:#9b0418;
+}
+.azul{
+	background-color:#1b3164;
+}
+.compartir{
+	background-image:url(../images/fb_share.jpg);
+	background-position: 10px top;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    text-align: center;
+	cursor:pointer;
+}
+.miformulario{
+	width:580px;
+	margin:0 auto 20px;
+}
+.miformulario tr{
+	height:55px;
+}
+
+.miformulario td{
+	text-align:left;
+	vertical-align:top;
+}
+
+.miformulario .izq{
+	width:130px;	
+}
+.miformulario .dch{
+	width:450px;	
+}
+
+.miformulario input[type=text],.miformulario input[type=email]{
+	width:95%;
+	padding:8px 2.5%;
+	font-family:"Fjalla One",verdana,arial;
+    font-size: 18px;
+	color:#111;
+	border-radius:8px;
+	border:none 0px;
+	-webkit-box-shadow: inset 6px 7px 9px -7px rgba(0,0,0,0.33);
+	-moz-box-shadow: inset 6px 7px 9px -7px rgba(0,0,0,0.33);
+	box-shadow: inset 6px 7px 9px -7px rgba(0,0,0,0.33);
+}
+.micheck{
+	float: left;
+    margin: 8px -15px 0 25px;
+	cursor:pointer;	
+}
+
+#ventana{
+	z-index:1000;
+	position:fixed;
+	top:50%;
+	left:50%;
+	width:600px;
+	height:auto;
+	transform:translate(-50%,-50%);
+	background-color:#fff;
+	background-image:url(../images/bg_wrapper.jpg);
+    background-position: center -250px;
+    background-repeat: no-repeat;
+	background-size:100% auto;
+	-webkit-box-shadow: 6px 10px 50px 10px rgba(139,150,176,1);
+	-moz-box-shadow: 6px 10px 50px 10px rgba(139,150,176,1);
+	box-shadow: 6px 10px 50px 10px rgba(139,150,176,1);
+	padding:50px;
+}
+.aspa{
+	width:100%;	
+	height:auto;
+	float:left;
+	text-align:right;
+}
+.aspa .cerrar{
+	cursor:pointer;	
+}
+#ventana .contenedor{
+	width:600px;
+	height:auto;
+	float:left;	
+}
+
+#microp {
+			width: 400px;
+			height: 400px;
+			position:fixed; /* or fixed or absolute */
+}
+#gracias, #yaparticipado{
+	text-align:center;	
+}
+#gracias h2, #gracias p, #yaparticipado h2, #yaparticipado p{
+	margin:0 auto 30px;	
+}
+
+/*----------- galeria ---------------------- */
+
+.galeria{
+	width:700px;
+	height:auto;
+	float:left;
+	text-align:center;
+	padding:20px 60px 0px;	
+}
+
+.superior{
+	width:100%;
+	float:left;
+	height:auto;
+	padding:0 0 40px;	
+}
+
+.superior h3{
+	float:left;
+	text-transform:uppercase;
+	font-size:20px;	
+	margin:0;
+}
+
+.superior .buscador{
+	float:right;
+	width: 400px;
+	padding:8px 10px;
+	font-family:"Fjalla One",verdana,arial;
+    font-size: 13px;
+	color:#111;
+	border-radius:8px;
+	border:none 0px;
+	-webkit-box-shadow: inset 6px 7px 9px -7px rgba(0,0,0,0.33);
+	-moz-box-shadow: inset 6px 7px 9px -7px rgba(0,0,0,0.33);
+	box-shadow: inset 6px 7px 9px -7px rgba(0,0,0,0.33);
+	background-image:url(../images/search.jpg);
+	background-position:right 2% center;
+	background-repeat:no-repeat;
+	background-size:auto 75%;
+	-webkit-transition: 0.5s ease-in-out;
+	-moz-transition: 0.5s ease-in-out;
+	transition: 0.5s ease-in-out;
+}
+
+.superior .buscador:focus{
+	background-position:right -50px center;
+}
+
+.galeria .miniaturas{
+	width:100%;
+	height:auto;
+	float:left;
+}
+
+.item{
+	float: left;
+    height: 220px;
+    margin: 0 6px 13px;
+    overflow: hidden;
+    position: relative;
+    top: 0;
+    width: 220px;
+	cursor:pointer;
+}
+
+.item .imagen{
+	float: left;
+    height: 220px;
+    position: absolute;
+    top: 0;
+    width: 220px;
+}
+
+.item .imagen img{
+	width:100%;
+	height:100%;
+	float:left;	
+}
+
+.item .texto{
+	background-color: rgba(0,0,0,0.8);
+    bottom: -200px;
+    float: left;
+    font-size: 13px;
+	line-height:18px;
+    height: auto;
+    padding: 10px;
+    position: absolute;
+    text-align: center;
+    width: 200px;
+	-webkit-transition: 0.5s ease-in-out;
+	-moz-transition: 0.5s ease-in-out;
+	transition: 0.5s ease-in-out;
+	color:#fff;
+	
+}
+.item:hover .texto{
+    bottom: 0px;
+}
+
+.inferior{
+	width:100%;
+	float:left;
+	height:auto;
+	padding:20px 0 0;	
+}
+.inferior p{
+	margin:15px auto 10px !important;	
+}
+
+.footer_desktop{
+	display:block;	
+}
+.footer_mobile{
+	display:none;	
+}
+
+@media only screen and (max-width: 810px) and (orientation:portrait){
+	body{
+		background-color: #fff;
+		background-image:none;
+		color: #000;
+		font-size: 25px;
+		line-height: 38px;
+		margin: 0;
+		padding: 0 !important;
+	}
+	#wrapper{
+		width:100% !important;
+		height:auto;
+		background-color:#fff;
+		background-image:url(../images/bg_wrapper.jpg);
+		background-position: center top;
+		background-repeat: no-repeat;
+		background-size:100% auto;
+		-webkit-box-shadow:none;
+		-moz-box-shadow: none;
+		box-shadow: none;
+		left: 0;
+		margin: 0 !important;
+		top: 0;
+		position:absolute;
+		padding:0 !important;
+	}
+	.footer_desktop{
+		display:none;	
+	}
+	.footer_mobile{
+		display:block;	
+	}
+	.mini{
+		font-size:22px;
+		line-height:27px;
+		font-weight:600;	
+	}
+	.mini sup{
+		font-size:15px;
+	}
+	.boton{
+		margin: 25px auto;
+		padding: 15px 0 13px;
+		width: 300px;
+		font-size:28px;
+	}
+	.boton2{
+		margin: 25px 7px;
+		padding: 15px 0 13px;
+		width: 310px;
+		font-size: 28px;
+		display:inline-block;
+	}
+	.miformulario {
+		width: 80%;
+		margin: 40px auto 20px;
+	}
+	.miformulario tr{
+		height:75px;
+	}
+	
+	.miformulario td{
+		font-size:30px;
+	    vertical-align: middle;
+	}
+	.miformulario .dch{
+
+	}
+	
+	.miformulario input[type=text],.miformulario input[type=email]{
+		width:95%;
+		padding:8px 2.5%;
+		font-family:"Fjalla One",verdana,arial;
+		font-size: 28px;
+		color:#111;
+		border-radius:10px;
+		border:none 0px;
+		-webkit-box-shadow: inset 6px 7px 9px -7px rgba(0,0,0,0.33);
+		-moz-box-shadow: inset 6px 7px 9px -7px rgba(0,0,0,0.33);
+		box-shadow: inset 6px 7px 9px -7px rgba(0,0,0,0.33);
+	}
+	.micheck{
+		float: left;
+		margin: 10px -2px 0 25px;
+		cursor: pointer;
+		transform: scale(1.5);
+	}
+	.galeria{
+		width:90%;
+		height:auto;
+		float:left;
+		text-align:center;
+		padding:20px 5% 0px;	
+	}
+	
+	.superior{
+		width:100%;
+		float:left;
+		height:auto;
+		padding:0 0 50px;	
+	}
+	
+	.superior h3{
+		float:left;
+		text-transform:uppercase;
+		font-size:35px;	
+		margin: 8px 0 0 0px !important;
+	}
+	
+	.superior .buscador{
+		float:right;
+		width: 500px;
+		padding:8px 10px;
+		font-family:"Fjalla One",verdana,arial;
+		font-size: 30px;
+		color:#111;
+		border-radius:8px;
+		border:none 0px;
+		-webkit-box-shadow: inset 6px 7px 9px -7px rgba(0,0,0,0.33);
+		-moz-box-shadow: inset 6px 7px 9px -7px rgba(0,0,0,0.33);
+		box-shadow: inset 6px 7px 9px -7px rgba(0,0,0,0.33);
+		background-image:url(../images/search.jpg);
+		background-position:right 2% center;
+		background-repeat:no-repeat;
+		background-size:auto 75%;
+	}
+	
+	.galeria .miniaturas{
+		width: 100%;
+		height: auto;
+		float: left;
+		margin: 0 auto;
+	}
+	
+	.item{
+		float: left;
+		height: 27vw;
+		margin: 0 1.5% 25px !important;
+		overflow: hidden;
+		position: relative;
+		top: 0;
+		width: 30.333333% !important;
+		cursor: pointer;
+	}
+	
+	.item .imagen{
+		float: left;
+		height: 27vw;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+	
+	.item .imagen img{
+		width:100%;
+		height:100%;
+		float:left;	
+	}
+	
+	.item .texto{
+		display:none;
+		
+	}
+	
+	.inferior{
+		width:100%;
+		float:left;
+		height:auto;
+		padding:30px 0 0;	
+	}
+	.inferior p{
+		margin:20px auto 10px !important;	
+	}
+}
+	

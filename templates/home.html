@@ -1,24 +1,76 @@
 {% extends "base.html" %}
 
 {% block content %}
-   <h1>Home</h1>
-<form class="bs-example" id="form1" method="post" action="index.php">
-  <div class="input-group">
-     <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Nombre" required aria-describedby="sizing-addon1">
-  </div> <br>
-  <div class="input-group">
-     <input type="text" name="apellidos" id="apellidos" class="form-control" placeholder="Apellidos" required aria-describedby="sizing-addon1">
-  </div> <br>
-  <div class="input-group">
-     <input type="email" name="email" id="email" class="form-control" placeholder="Email" required aria-describedby="sizing-addon1">
-  </div> <br>
-  <input type="button" id="subir" value="Subir foto" />
+<form id="form1" method="post" action="index.php" novalidate="novalidate">
+<div id="pagina1" class="pagina">
+   	<h1>¡Hazte una foto con tus cascos, súbela<br /> y gana premios llenos de ritmo!</h1>
+    <p>Los 1.000 primeros participantes conseguirán <br />una cuenta Premium de Spotify.<p>
+    <p>Las fotos más divertidas y originales darán acceso <br />al concierto que Efecto Pasillo ofrecerá en exclusiva <br />en uno de nuestros restaurantes. <br />¡30 entradas dobles!</p>
+    <p><span class="rojo boton" onClick="Siguiente();">Participar</span><a class="azul boton" href="index.php?galeria=1">Galería</a></p>
+    <p class="mini">¿Todavía no tienes los cascos? <br />Consíguelos en McDonald’s<sup>®</sup> con la compra de McMenú<sup>®</sup> Grande +1€</p>
+</div>
+<div id="pagina2" class="pagina" style="display:none">
+   	<h2>Regístrate</h2>
+    <p>Rellena este formulario para poder ponernos <br />en contacto contigo si resultas ganador.</p>
+
+    <table cellpadding="0" cellspacing="0" border="0" class="miformulario">
+    	<tr>
+        	<td class="izq">Nombre</td>
+            <td class="dch"><input type="text" name="nombre" id="nombre" required></td>
+        </tr>
+        <tr>
+            <td>Apellidos</td>
+            <td><input type="text" name="apellidos" id="apellidos" required></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td><input type="email" name="email" id="email" required></td>
+        </tr>
+	</table>
+	<p>
+		<span class="azul boton2"><input type="checkbox" class="micheck" name="micheck" id="micheck" /> <label>Acepto condiciones</label></span>
+		   <a href="#" class="rojo boton2" id="subir" onclick="validate();">Subir foto</a>
+        <input type="hidden" id="cropOutput" name="cropOutput" required style="" /><br />
 
 
-  <div id="cropContainer"></div>
+	</p>
+</div>
 
-    <input type="text" id="cropOutput" name="cropOutput" required style="" /><br />
+{% endblock %}
 
-    <input type="submit" name="submit" value="Enviar" />
- </form>
+{% block ventana %}
+<div id="ventana" style="display:none">
+	<div class="aspa"><img src="images/cerrar.png" class="cerrar" onclick="cerrarVentana2();" /></div>
+    <div class="contenedor" id="subidor">
+    	<div id="cropContainer"></div>
+      <input type="button" id="subir2" value="SUBIR FOTO" />
+      <input type="submit" name="submit4" id="submit4" value="Enviar" />
+    </div>
+
+    <div class="contenedor" id="gracias" style="display:none">
+        <h2>¡Gracias por participar!</h2>
+        <p>Si eres uno de los 1.000 primeros, pronto recibirás <br />en tu correo todo lo necesario para activar tu cuenta <br />Premium de Spotify.</p>
+        <p>Si tu foto es una de las 30 más divertidas y originales, <br />te enviaremos tu entrada doble para el concierto <br /> de Efecto Pasillo. </p>
+        <p>¡Comprate para que tus amigos también puedan participar!</p>
+        <p><a href="#" class="azul boton compartir">Compartir</a></p>
+    </div>
+    <div class="contenedor" id="yaparticipado" style="display:none">
+        <h2>¡PAUSE!</h2>
+        <p>Parace que ya has participado en el consurso. <br />Si has sido ganador, estate atento al email.</p>
+        <p>¡MUCHA SUERTE!</p>
+        <p><a href="#" class="azul boton compartir">Compartir</a></p>
+    </div>
+</div>
+		</form>
+    {% if mensaje == 1 %}
+
+    <script>
+        $("#subidor").hide(); $("#ventana").show(); $("#gracias").show();
+    </script>
+    {% endif %}
+    {% if mensaje == 2 %}
+    <script>
+        $("#subidor").hide(); $("#ventana").show(); $("#yaparticipado").show();
+    </script>
+    {% endif %}
 {% endblock %}

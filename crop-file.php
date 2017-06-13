@@ -79,8 +79,20 @@ if(!is_writable(dirname($output_filename))){
 	imagecolortransparent($final_image, imagecolorallocate($final_image, 0, 0, 0));
 	imagecopyresampled($final_image, $cropped_rotated_image, 0, 0, $imgX1, $imgY1, $cropW, $cropH, $cropW, $cropH);
 	// finally output png image
-	//imagepng($final_image, $output_filename.$type, $png_quality);
+	//imagejpeg($final_image, $output_filename.$type, $jpeg_quality);
+
+  $mcd = imagecreatefrompng('images/mcd.png');
+  $mcd_width = imagesx($mcd);
+  $mcd_height = imagesy($mcd);
+
+  // Copy and merge
+  imagecopymerge($final_image, $mcd, 310, 0, 0, 0, $mcd_width, $mcd_height, 80);
+
 	imagejpeg($final_image, $output_filename.$type, $jpeg_quality);
+
+  //imagedestroy($final_image);
+  //imagedestroy($mcd);
+
 	$response = Array(
 	    "status" => 'success',
 	    "url" => $output_filename.$type
