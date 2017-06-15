@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="pagina1" class="pagina">
+   	<h1>¡Hazte una foto con tus cascos, súbela<br /> y gana premios llenos de ritmo!</h1>
+    <p>Los 1.000 primeros participantes conseguirán <br />una cuenta Premium de Spotify.<p>
+    <p>Las fotos más divertidas y originales darán acceso <br />al concierto que Efecto Pasillo ofrecerá en exclusiva <br />en uno de nuestros restaurantes. <br />¡30 entradas dobles!</p>
+    <p class="participap"><a href="index.php?participa=1" class="rojo boton">Participar</a><p>
+    <p class="loginfb">Por favor, logueate en esta app <fb:login-button
+  scope="public_profile,email"
+  onlogin="checkLoginState();">
+</fb:login-button></p>
+    <p class="galeriap"><a class="azul boton" href="index.php?galeria=1">Galería</a></p>
+    <p class="mini">¿Todavía no tienes los cascos? <br />Consíguelos en McDonald’s<sup>®</sup> con la compra de McMenú<sup>®</sup> Grande +1€</p>
+</div>
+{% endblock %}
+
+{% block ventana %}
+{% endblock %}

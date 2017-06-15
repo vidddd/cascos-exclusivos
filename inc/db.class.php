@@ -8,9 +8,9 @@ class Database{
         $this->db = new MysqliDb (HOST,USER,PASSWORD,DATABASE);
     }
 
-     public function insertaParticipacion($nombre, $apellidos, $email, $foto){
+     public function insertaParticipacion($nombre, $apellidos, $email, $foto, $fbid){
         $ok = false;
-        $data = Array ("nombre" => $nombre,
+        $data = Array ("fbid" => $fbid, "nombre" => $nombre,
                  "apellidos" => $apellidos,
                  "email" => $email,
                  "foto" => $foto
@@ -31,7 +31,14 @@ class Database{
                  return false;
              }
       }
-
+      public function existeFbid($fbid) {
+             $ents = $this->db->rawQueryOne('select * from participaciones where fbid=?', Array($fbid));
+             if(!empty($ents)){
+                 return true;
+             } else {
+                 return false;
+             }
+      }
       public function getParticipaciones($pag){
             $this->db->orderBy("id","desc");
             $this->db->page = $pag;

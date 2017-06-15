@@ -1,18 +1,19 @@
 function validate() {
   if($('#nombre').val() == '') {
-    alert('Por favor introduce un nombre');
+        $(".error").show(); $(".error").html("Por favor introduce tu nombre");
   } else if($('#apellidos').val() == '') {
-      alert('Introduce un apellido');
+      $(".error").show(); $(".error").html("Por favor introduce tu apellido");
     } else if($('#email').val() == '') {
-      alert('Introduce un email');
+    $(".error").show(); $(".error").html("Por favor introduce tu email");
     } else if(!validateEmail($("#email").val())) {
-      alert('Introduce un email válido');
+      $(".error").show(); $(".error").html("Por favor introduce una direccion de email valida");
     } else if ($('#micheck:checked').length  === 0) {
-      alert('Debes aceptar las condiciones');
+      $(".error").show(); $(".error").html("Debes aceptar las condiciones");
     } else {
-      mostarVentana(); $("#yaparticipado").hide(); $("#subir2").click();
-      //alert(cropContainer);
-      //cropContainer.imgUploadControl.init();
+      cropContainer.reset();
+      $("#subidor").show();
+      $(".error").hide(); mostarVentana(); $("#yaparticipado").hide();$("#gracias").hide(); $("#subir2").click();
+
     }
 }
 
@@ -26,13 +27,19 @@ $("document").ready(function() {
 
 function mostarVentana(){
 	$("#ventana").css("display","block");
+	$("#resalto").css("display","block");
 }
 function cerrarVentana(){
 	$("#ventana").css("display","none");
+	$("#resalto").css("display","none");
 }
 function cerrarVentana2(){
 	$("#ventana").css("display","none");
-  	$("#subir").show();	$("#submit4").show();
+	$("#resalto").css("display","none");
+  $("#subir").show();
+  $("#gracias").hide();
+    cropContainer.reset();
+    	$("#submit4").hide();
 }
 function Siguiente(){
 	$("#pagina1").css("display","none");

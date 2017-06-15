@@ -1,4 +1,10 @@
 <?php
+if($_SERVER["HTTPS"] != "on")
+{
+    header("Location: https://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]);
+    exit();
+}
+
 session_start();
 opcache_reset();
 error_reporting(E_ALL);
@@ -9,11 +15,11 @@ require_once __DIR__ . '/inc/db.class.php';
 $db = new Database();
 
 if($_POST['nombre']) {
-   $nombre = $_POST['nombre']; $apellidos = $_POST['apellidos']; $email = $_POST['email']; $foto = $_POST['cropOutput'];
-   if ($db->existeEmail($email)) {
+   $nombre = $_POST['nombre']; $apellidos = $_POST['apellidos']; $email = $_POST['email']; $foto = $_POST['cropOutput'];$fbid = $_POST['fbid'];
+   if ($db->existeEmail($email) || $db->existeFbid($fbid)) {
        echo $twig->render('home.html', array("mensaje" => 2));
    } else {
-       $db->insertaParticipacion($nombre, $apellidos, $email, $foto);
+       $db->insertaParticipacion($nombre, $apellidos, $email, $foto, $fbid);
        echo $twig->render('home.html', array("mensaje" => 1));
    }
 } else {
@@ -33,7 +39,9 @@ if($_POST['nombre']) {
 
       echo $twig->render('galeria.html', array("fotos" => $fotos, "anterior" => $anterior, "siguiente" => $siguiente, "texto" => ''));
    }
-  } else {
-    echo $twig->render('home.html', array());
+ } else if ($_GET['participa'] == 1){
+     echo $twig->render('home.html', array());
+ }  else {
+    echo $twig->render('nologin.html', array());
   }
 }
