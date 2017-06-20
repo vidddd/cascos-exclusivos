@@ -9,7 +9,7 @@ body{
     color: #000;
    /*font-family: "Oswald",verdana,arial;*/
 	font-family:"Fjalla One",verdana,arial;
-    font-size: 23px;
+    font-size: 26px;
     font-weight: 500;
     line-height: 32px;
     margin: 0;
@@ -44,7 +44,7 @@ img, div{
 	height:auto;	
 }
 #cabecera{
-	padding-bottom:30px;	
+	padding-bottom:10px;	
 }
 #cabecera img, #pie img{
 	float:left;
@@ -61,32 +61,31 @@ img, div{
 
 h1{
 	font-size: 35px;
-    line-height: 40px;
-    margin: 0 auto 30px;
-	letter-spacing:0.5px;	
+    line-height: 38px;
+    margin: 0 auto 40px;
 }
 h2{
 	font-size: 32px;
     line-height: 40px;
     margin: 0 auto 30px;
-	letter-spacing:0.5px;
 	text-transform:uppercase;
 }
 p{
-	margin: 0 auto 20px;
+	margin: 0 auto 35px;
     width: 90%;
 }
 
 .mini{
-	font-size:19px;
-	line-height:25px;
-	font-weight:600;	
+	font-size: 19px;
+    font-weight: 600;
+    letter-spacing: 0.25px;
+    line-height: 17px;	
 }
 .mini sup{
 	font-size:15px;
 }
 .boton{
-	border-radius: 15px;
+	border-radius: 10px;
     color: #fff;
     display: inherit;
     margin: 0 auto 20px;
@@ -95,9 +94,11 @@ p{
     width: 260px;
 	text-transform:uppercase;
 	cursor:pointer;
+	font-size:24px;
+	letter-spacing:0.5px;
 }
 .boton2{
-	border-radius: 15px;
+	border-radius: 10px;
     color: #fff;
     display: inline-block;
     margin: 0 10px 20px;
@@ -106,6 +107,8 @@ p{
     width: 260px;
 	text-transform:uppercase;
 	cursor:pointer;
+	font-size:24px;
+	letter-spacing:0.5px;
 }
 .rojo{
 	background-color:#9b0418;
@@ -113,20 +116,25 @@ p{
 .azul{
 	background-color:#1b3164;
 }
+
+.participap{
+	margin:0 auto 10px;	
+}
+
 .compartir{
-	background-image:url(../images/fb_share.jpg);
-	background-position: 10px top;
+	background-image: url("../images/fb_share.jpg");
+    background-position: 10px bottom;
     background-repeat: no-repeat;
-    background-size: auto 100%;
+    background-size: auto 90%;
+    cursor: pointer;
     text-align: center;
-	cursor:pointer;
 }
 .miformulario{
 	width:580px;
 	margin:0 auto 20px;
 }
 .miformulario tr{
-	height:55px;
+	height:65px;
 }
 
 .miformulario td{
@@ -145,7 +153,7 @@ p{
 	width:95%;
 	padding:8px 2.5%;
 	font-family:"Fjalla One",verdana,arial;
-    font-size: 18px;
+    font-size: 20px;
 	color:#111;
 	border-radius:8px;
 	border:none 0px;
@@ -162,13 +170,13 @@ p{
 
 p.error{
 	border: 0 none !important;
-    font-size: 20px;
+    font-size: 23px;
 }
 
 .micheck{
-	float: left;
-    margin: 8px -15px 0 25px;
-	cursor:pointer;	
+	cursor: pointer;
+    float: left;
+    margin: 8px -8px 0 17px;	
 }
 #resalto{
 	z-index:500;
@@ -222,7 +230,7 @@ p.error{
 }
 #gracias, #yaparticipado{
 	text-align:center;
-	width: 700px;
+	width: 700px !important;
 }
 #gracias h2, #gracias p, #yaparticipado h2, #yaparticipado p{
 	margin:0 auto 30px;	
@@ -248,13 +256,14 @@ p.error{
 .superior h3{
 	float:left;
 	text-transform:uppercase;
-	font-size:20px;	
+	font-size:25px;	
+	font-weight:normal;
 	margin:0;
 }
 
 .superior .buscador{
 	float:right;
-	width: 400px;
+	width: 435px;
 	padding:8px 10px;
 	font-family:"Fjalla One",verdana,arial;
     font-size: 13px;
@@ -433,6 +442,9 @@ p.error{
 
 
 @media only screen and (max-width: 810px) and (orientation:portrait){
+	#cabecera{
+	padding-bottom:30px;	
+	}
 	body{
 		background-color: #fff;
 		background-image:none;
@@ -441,7 +453,7 @@ p.error{
 		line-height: 38px;
 		margin: 0;
 		padding: 0 !important;
-	}
+	}.item
 	#wrapper{
 		width:100% !important;
 		height:auto;
@@ -570,33 +582,33 @@ p.error{
 
 	.item .num{
 		float: left;
-		font-size: 15px;
-		height: 16px;
-		line-height: 1;
-		margin: 0;
-		padding: 0 0 5px;
-		text-align: right;
-		width: 100%;
+    font-size: 15px;
+    height: 16px;
+    line-height: 1;
+    margin: 0;
+    padding: 0 0 5px;
+    text-align: right;
+    width: 100%;
 	}
 
 
 	
 	.item{
+		cursor: pointer;
 		float: left;
-		height: 27.9vw;
+		height: auto;
 		margin: 0 1.5% 25px !important;
 		overflow: hidden;
 		position: relative;
 		top: 0;
-		width: 30.333333% !important;
-		cursor: pointer;
+		width: 30.3333% !important;
 	}
 	
 	.item .imagen{
 		float: left;
 		height: 27vw;
-		position: absolute;
-		top: 18px;
+		position: relative;
+		top: 0;
 		width: 100%;
 	}
 	
@@ -607,7 +619,18 @@ p.error{
 	}
 	
 	.item .texto{
-		display:none;
+		background-color: rgba(255,255,255,0.8);
+		color: #000;
+		float: left;
+		font-size: 20px;
+		height: auto;
+		left: 0;
+		overflow: visible;
+		padding: 20px 5%;
+		position: relative !important;
+		text-align: center;
+		top: 0;
+		width: 90%;
 		
 	}
 	
@@ -620,6 +643,9 @@ p.error{
 	.inferior p{
 		margin:20px auto 10px !important;
 		width:100%;	
+	}
+	.cropControls i{
+				display:none !important;
 	}
 }
 	

@@ -3,7 +3,7 @@
 {% block content %}
 <form id="form1" method="post" action="index.php" novalidate="novalidate">
 <div id="pagina2" class="pagina" style="display:">
-   	<h1>REGÍSTRATE</h1>
+   	<h2>Regístrate</h2>
     <p>Rellena este formulario para poder ponernos <br />en contacto contigo si resultas ganador.</p>
 
     <table cellpadding="0" cellspacing="0" border="0" class="miformulario">
@@ -27,9 +27,11 @@
 		<span class="azul boton2"><input type="checkbox" class="micheck" name="micheck" id="micheck" /> <label>Acepto condiciones</label></span>
 		   <a href="#" class="rojo boton2" id="subir" onclick="validate();">Subir foto</a>
         <input type="hidden" id="cropOutput" name="cropOutput" required style="" /><br />
+
+
 	</p>
-      <p class="galeriap"><a class="azul boton" href="index.php?galeria=1">Galería</a></p>
 </div>
+
 {% endblock %}
 
 {% block ventana %}

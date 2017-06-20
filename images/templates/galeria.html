@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="pagina galeria" style="display:">
+   		<div class="superior">
+        <form action="index.php?galeria=1" method="POST" name="form3" id="form3">
+        	<h3>Galería</h3>
+            <input type="search" class="buscador" name="textob" id="textob" value="{{ texto }}" required placeholder="Buscar" />
+        </div>
+        <form>
+        <div class="miniaturas">
+          {% for foto in fotos %}
+          <div class="item">
+          	  <div class="num">{{ foto.id }}</div>
+              <div class="imagen">
+                  <img src="{{ foto.foto }}" />
+                </div>
+                <div class="texto">
+                  {{ foto.nombre }} {{ foto.apellidos }}
+                </div>
+            </div>
+          {% endfor %}
+        </div>
+        <div class="inferior">
+        	  <p>{% if anterior != 0 %}<a href="index.php?galeria=1&pagina={{ anterior }}" class="boton2 azul">Atrás</a>{% endif %}
+            {% if siguiente <= fotos[0].total %}<a href="index.php?galeria=1&pagina={{ siguiente }}" class="boton2 azul">Siguiente</a>{% endif %}</p>
+            <p><a href="index.php?participa=1" class="boton2 rojo">Participar</a></p>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block ventana %}
+{% endblock %}

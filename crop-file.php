@@ -86,7 +86,7 @@ if(!is_writable(dirname($output_filename))){
   $mcd_height = imagesy($mcd);
 
   // Copy and merge
-  imagecopymerge($final_image, $mcd, 310, 0, 0, 0, $mcd_width, $mcd_height, 80);
+  imagecopymerge($final_image, $mcd, 310, 0, 0, 0, $mcd_width, $mcd_height, 99);
 
 	imagejpeg($final_image, $output_filename.$type, $jpeg_quality);
 

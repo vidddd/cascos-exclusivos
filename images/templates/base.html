@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="shortcut icon" href="imagenes/favicon.ico" type="image/x-icon">
+        <title>Cascos Exclusivos con tu BigMac</title>
+        <meta name="viewport" content="width=810px; user-scalable=0;">
+        <meta name="description" content="" />
+        <meta property="og:title" content="¡Participa con tus cascos de McDonald's!" />
+        <meta property="og:description" content="Consigue una suscripción premium de Spotify." />
+        <meta property="og:url" content="https://cascos.promofb.es" />
+        <meta property="og:image" content="https://cascos.promofb.es/images/compartir.jpg" />
+        <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+        <link rel="stylesheet" href="css/croppic.css" />
+        <link href="css/estilos.css" rel="stylesheet" type="text/css" />
+        <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/croppic.js"></script>
+    </head>
+    <body>
+      <script>
+  // This is called with the results from from FB.getLoginStatus().
+  function statusChangeCallback(response) {
+   // console.log('statusChangeCallback');
+  //  console.log(response);
+
+    if (response.status === 'connected') {
+          //alert('Logged into your app and Facebook.111');
+          $(".loginfb").hide();$(".participap").show();
+         testAPI();
+       } else if (response.status === 'not_authorized') {
+         //alert('The person is logged into Facebook, but not your app.111');
+         $(".participap").hide();
+
+   		FB.login(function(response) {
+   		  if (response.status === 'connected') {
+   		   // alert('Logged into your app and Facebook.222');
+          $(".loginfb").hide();$(".participap").show();
+   		  } else if (response.status === 'not_authorized') {
+   		   // alert(' The person is logged into Facebook, but not your app.222');
+          $(".participap").hide();
+   		  } else {
+          window.location="httpS://cascos.promofb.es";
+   		   //alert('The person is not logged into Facebook, so were not sure if they are logged into this app or not.');
+   		  }
+   		}, {scope: 'email'});
+              //document.getElementById('status').innerHTML = 'Please log ' + 'into this app.';
+       } else {
+         // The person is not logged into Facebook, so we're not sure if
+         // they are logged into this app or not.
+         $(".participap").hide();
+        // alert('Please log ' +  'into Facebook.');
+       }
+     }
+
+  // This function is called when someone finishes with the Login
+  // Button.  See the onlogin handler attached to it in the sample
+  // code below.
+  function checkLoginState() {
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
+  }
+
+  window.fbAsyncInit = function() {
+  FB.init({
+    appId      : '964761096998133',
+    cookie     : true,  // enable cookies to allow the server to access
+                        // the session
+    xfbml      : true,  // parse social plugins on this page
+    version    : 'v2.8' // use graph api version 2.8
+  });
+
+  // Now that we've initialized the JavaScript SDK, we call
+  // FB.getLoginStatus().  This function gets the state of the
+  // person visiting this page and can return one of three states to
+  // the callback you provide.  They can be:
+  //
+  // 1. Logged into your app ('connected')
+  // 2. Logged into Facebook, but not your app ('not_authorized')
+  // 3. Not logged into Facebook and can't tell if they are logged into
+  //    your app or not.
+  // These three cases are handled in the callback function.
+  FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+  });
+  };
+
+  // Load the SDK asynchronously
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
+  // Here we run a very simple test of the Graph API after login is
+  // successful.  See statusChangeCallback() for when this call is made.
+  function testAPI() {
+    //console.log('Welcome!  Fetching your information.... ');
+    FB.api('/me', function(response) {
+      $("#nombre").val(response.name);$("#apellidos").val('');$("#email").val(response.email);
+      $("#fbid").val(response.id);
+    /*  console.log('Successful login for: ' + response.name);
+      document.getElementById('status').innerHTML =
+        'Thanks for logging in, ' + response.name + '!';*/
+    });
+  }
+</script>
+		<div id="wrapper">
+			{{ include('header.html') }}
+            {% block content %}
+            {% endblock %}
+            {{ include('footer.html') }}
+        </div>
+    	{% block ventana %}
+		{% endblock %}
+    </body>
+
+            <script>
+              var croppicContainerModalOptions = {
+                  uploadUrl:'save-file.php',
+                  cropUrl:'crop-file.php',
+                  modal:false,
+                  imgEyecandyOpacity:0.4,
+                  rotateControls:false,
+                  doubleZoomControls:false,
+                  customUploadButtonId:'subir2',
+                  outputUrlId:'cropOutput',
+                  loaderHtml:'<div class="loader bubblingG"><span id="bubblingG_1"></span><span id="bubblingG_2"></span><span id="bubblingG_3"></span></div> ',
+                  // onBeforeImgUpload: function(){ validate();  },
+                //  onAfterImgUpload: function(){ console.log('onAfterImgUpload') },
+                //  onImgDrag: function(){ console.log('onImgDrag') },
+                //  onImgZoom: function(){ console.log('onImgZoom') },
+                //    onBeforeImgCrop: function(){ console.log('onBeforeImgCrop') },
+                // onAfterImgCrop:function(){ $("#submit4").show(); },
+                // onReset:function(){ alert('reset'); },
+                //  onError:function(errormessage){ console.log('onError:'+errormessage)}
+                onAfterRemoveCroppedImg:function() { cerrarVentana2(); }
+              }
+              var cropContainer = new Croppic('cropContainer', croppicContainerModalOptions)
+            </script>
+              <script src="js/main.js"></script>
+</html>
