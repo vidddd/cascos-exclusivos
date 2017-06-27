@@ -9,24 +9,49 @@
         </div>
         <form>
         <div class="miniaturas">
-          {% for foto in fotos %}
-          <div class="item">
-          	  <div class="num">{{ foto.id }}</div>
-              <div class="imagen">
-                  <img src="{{ foto.foto }}" />
+          {% if texto != '' %}
+              {% if fotos %}
+              {% for foto in fotos %}
+              <div class="item">
+                  <div class="num">{{ foto.id }}</div>
+                  <div class="imagen">
+                      <img src="{{ foto.foto }}" />
+                    </div>
+                    <div class="texto">
+                      {{ foto.nombre }} {{ foto.apellidos }}
+                    </div>
                 </div>
-                <div class="texto">
-                  {{ foto.nombre }} {{ foto.apellidos }}
-                </div>
-            </div>
-          {% endfor %}
+              {% endfor %}
+                <p><a href="index.php?galeria=1" class="boton2 azul">Ver Todo</a></p>
+              {% else %}
+                    <p>Lo sentimos, no hay resultados para la búsqueda realizada.</p>
+                    <p><a href="index.php?galeria=1" class="boton2 azul">Ver Todo</a></p>
+              {% endif %}
+          {% else %}
+            {% for foto in fotos %}
+            <div class="item">
+                <div class="num">{{ foto.id }}</div>
+                <div class="imagen">
+                    <img src="{{ foto.foto }}" />
+                  </div>
+                  <div class="texto">
+                    {{ foto.nombre }} {{ foto.apellidos }}
+                  </div>
+              </div>
+            {% endfor %}
+          {% endif %}
         </div>
         <div class="inferior">
         	  <p>{% if anterior != 0 %}<a href="index.php?galeria=1&pagina={{ anterior }}" class="boton2 azul">Atrás</a>{% endif %}
-            {% if siguiente <= fotos[0].total %}<a href="index.php?galeria=1&pagina={{ siguiente }}" class="boton2 azul">Siguiente</a>{% endif %}</p>
+            {% if fotos[0].total >= siguiente %}<a href="index.php?galeria=1&pagina={{ siguiente }}" class="boton2 azul">Siguiente</a>{% endif %}</p>
             <p><a href="index.php" class="boton2 rojo">Participar</a></p>
         </div>
     </div>
+    <script type="text/javascript">
+		$("document").ready(function() {
+     		 $("#cabecera").css("display","none");
+		});
+	</script>
 {% endblock %}
 
 

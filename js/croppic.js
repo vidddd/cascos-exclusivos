@@ -447,7 +447,7 @@
 			that.cropControlCrop.on('click',function(){ that.crop(); });
 
 			that.cropControlReset = that.cropControlsCrop.find('.cropControlReset');
-			that.cropControlReset.on('click',function(){ cerrarVentana2(); that.reset(); });				
+			that.cropControlReset.on('click',function(){ cerrarVentana3(); that.reset(); });				
 
 		},
 		initDrag:function(){

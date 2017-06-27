@@ -7,24 +7,28 @@
     <p>Rellena este formulario para poder ponernos <br />en contacto contigo si resultas ganador.</p>
 
     <table cellpadding="0" cellspacing="0" border="0" class="miformulario">
-    	<tr>
-        	<td class="izq">Nombre</td>
+    	  <tr>
+        	<td class="izq">Nombre <span style="color:#9b0418">*</span></td>
             <td class="dch"><input type="text" name="nombre" id="nombre" required></td>
         </tr>
         <tr>
-            <td>Apellidos</td>
+            <td>Apellidos <span style="color:#9b0418">*</span></td>
             <td><input type="text" name="apellidos" id="apellidos" required></td>
         </tr>
         <tr>
-            <td>Email</td>
+            <td>Email <span style="color:#9b0418">*</span></td>
             <td><input type="email" name="email" id="email" required>
                 <input type="hidden" name="fbid" id="fbid" value="" />
             </td>
         </tr>
 	</table>
     <p class="error" style="display:none;"></p>
+    <p class="error error1" style="display:none;"></p>
+    <p class="error error2" style="display:none;"></p>
+    <p class="error error3" style="display:none;"></p>
+    <p class="error error4" style="display:none;"></p>
 	<p>
-		<span class="azul boton2"><input type="checkbox" class="micheck" name="micheck" id="micheck" /> <label>Acepto condiciones</label></span>
+		<span class="azul boton2 aceptoa"><input type="checkbox" class="micheck" name="micheck" id="micheck" /> <label>Acepto condiciones</label></span>
 		   <a href="#" class="rojo boton2" id="subir" onclick="validate();">Subir foto</a>
         <input type="hidden" id="cropOutput" name="cropOutput" required style="" /><br />
 	</p>
@@ -35,12 +39,6 @@
 {% block ventana %}
 <div id="ventana" style="display:none">
 	<div class="aspa"><img src="images/cerrar.png" class="cerrar" onclick="cerrarVentana2();" /></div>
-    <div class="contenedor" id="subidor">
-    	<div id="cropContainer"></div>
-      <input type="button" id="subir2" value="SUBIR FOTO" style="visibility:hidden;" />
-      <input type="submit" name="submit4" id="submit4" value="Enviar" class="boton4 azul" style="display:none" />
-    </div>
-
     <div class="contenedor" id="gracias" style="display:none">
         <h2>¡Gracias por participar!</h2>
         <p>Si eres uno de los 1000 primeros, pronto recibirás <br />en tu correo todo lo necesario para activar tu cuenta <br />Premium de Spotify.</p>
@@ -54,8 +52,19 @@
         <p>¡MUCHA SUERTE!</p>
     </div>
 </div>
+
+<div id="ventana2" style="display:none">
+	<div class="aspa"><img src="images/cerrar.png" class="cerrar" onclick="cerrarVentana3();" /></div>
+    <div class="contenedor" id="subidor">
+    	<div id="cropContainer"></div>
+      <input type="button" id="subir2" value="SUBIR FOTO" style="visibility:hidden;" />
+      <input type="submit" name="submit4" id="submit4" value="Enviar" class="boton4 azul" style="display:none" />
+    </div>
+    		</form>
+</div>
+
 <div id="resalto" style="display:none;"></div>
-		</form>
+
     {% if mensaje == 1 %}
     <script>
         $("#subidor").hide(); $("#ventana").show(); $("#gracias").show();
@@ -66,4 +75,8 @@
         $("#subidor").hide(); $("#ventana").show(); $("#yaparticipado").show();
     </script>
     {% endif %}
+{% endblock %}
+
+{% block legalfooter %}
+<div class="textolegal">Promoción válida del 6/07/17 al 18/07/17, ambos inclusive. Bases notariales, política de privacidad y restaurantes adheridos <a href="#" target="_blank">aquí</a>.</div>
 {% endblock %}

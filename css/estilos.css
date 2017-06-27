@@ -26,7 +26,7 @@ img, div{
 	height:auto;
 	background-color:#fff;
 	background-image:url(../images/bg_wrapper.jpg);
-    background-position: center top;
+    background-position: center bottom;
     background-repeat: no-repeat;
 	background-size:100% auto;
 	-webkit-box-shadow: 6px 24px 92px 10px rgba(139,150,176,1);
@@ -91,26 +91,32 @@ p{
     color: #fff;
     display: inherit;
     margin: 0 auto 20px;
-    padding: 10px 0 8px;
+    padding: 23px 0 21px;
     text-decoration: none;
     width: 260px;
-	text-transform:uppercase;
-	cursor:pointer;
-	font-size:24px;
-	letter-spacing:0.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 24px;
+    letter-spacing: 0.5px;
+    border: none 0;
+    font-family: "Fjalla One";
+    line-height: 0;
 }
 .boton2{
 	border-radius: 10px;
     color: #fff;
     display: inline-block;
     margin: 0 10px 20px;
-    padding: 10px 0 8px;
+    padding: 23px 0 21px;
     text-decoration: none;
     width: 260px;
 	text-transform:uppercase;
 	cursor:pointer;
 	font-size:24px;
 	letter-spacing:0.5px;
+	border: none 0;
+    font-family: "Fjalla One";
+    line-height: 0;
 }
 .rojo{
 	background-color:#9b0418;
@@ -189,7 +195,7 @@ p.error{
 	width:100%;
 	height:100vh;
 }
-#ventana{
+#ventana, #ventana2{
 	z-index:1000;
 	position:fixed;
 	top:50%;
@@ -216,7 +222,7 @@ p.error{
 .aspa .cerrar{
 	cursor:pointer;	
 }
-#ventana .contenedor{
+#ventana .contenedor, #ventana2 .contenedor{
 	float: left;
     height: auto;
     left: 50%;
@@ -245,7 +251,7 @@ p.error{
 	height:auto;
 	float:left;
 	text-align:center;
-	padding:20px 60px 0px;	
+	padding:60px 60px 0px;	
 }
 
 .superior{
@@ -367,7 +373,24 @@ p.error{
 .footer_mobile{
 	display:none;	
 }
-
+.textolegal{
+	color: #000;
+    float: none;
+    font-size: 11px;
+    height: 50px;
+    line-height: 18px;
+    margin: 0 23%;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    top: -83px;
+    width: 54%;
+    z-index: 20;
+	
+}
+.textolegal a{
+	color:#000;	
+}
 #cropContainer {
     height: 400px;
     width: 400px !important;
@@ -599,7 +622,7 @@ p.error{
 		height:auto;
 		float:left;
 		text-align:center;
-		padding:20px 5% 0px;	
+		padding:60px 5% 0px;	
 	}
 	
 	.superior{
