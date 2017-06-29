@@ -107,16 +107,13 @@ p{
     color: #fff;
     display: inline-block;
     margin: 0 10px 20px;
-    padding: 23px 0 21px;
+    padding: 10px 0 8px;
     text-decoration: none;
     width: 260px;
 	text-transform:uppercase;
 	cursor:pointer;
 	font-size:24px;
 	letter-spacing:0.5px;
-	border: none 0;
-    font-family: "Fjalla One";
-    line-height: 0;
 }
 .rojo{
 	background-color:#9b0418;
@@ -184,7 +181,7 @@ p.error{
 .micheck{
 	cursor: pointer;
     float: left;
-    margin: 8px -8px 0 17px;	
+    margin: 9px 11px 0 17px;
 }
 #resalto{
 	z-index:500;
@@ -491,6 +488,58 @@ p.error{
 	margin: 60px auto 0 !important;	
 }
 
+.minimo{
+	float: left;
+    font-size: 13px;
+}
+.aceptoa{
+	margin-left: 95px;
+    width: 340px;
+	float:left;	
+}
+#subir{
+	float:left;
+}
+
+#cookies{
+	background-color: rgba(0, 0, 0, 0.85);
+    border: 0 none;
+    bottom: 0;
+    color: #fff;
+    font-family: arial;
+    height: auto;
+    left: 0;
+    margin: 0;
+    padding: 10px 2%;
+    position: fixed;
+    text-align: center;
+    width: 96%;	
+	z-index:9999999999999;
+}
+
+#cookies p{
+	 font-size: 14px;
+    line-height: 18px;
+    margin: 10px auto;
+    width: 70%;
+}
+#cookies a{
+	color:#fff;	
+	cursor:pointer;
+	font-weight:bold;
+}
+#cookies .btn{
+	background-color: #fff;
+    border-radius: 8px;
+    color: #111;
+    display: block;
+    font-size: 17px;
+    font-weight: bold;
+    margin: 0 auto;
+    padding: 9px 0;
+    width: 140px;		
+}
+
 @media only screen and (max-width: 810px) and (orientation:portrait){
 	#cabecera{
 	padding-bottom:30px;	
@@ -547,7 +596,7 @@ p.error{
 	}
 	.boton{
 		margin: 25px auto;
-		padding: 15px 0 13px;
+		padding: 35px 0 30px;
 		width: 315px;
 		font-size:35px !important;
 	}
@@ -612,10 +661,10 @@ p.error{
 		box-shadow: inset 6px 7px 9px -7px rgba(0,0,0,0.33);
 	}
 	.micheck{
-		float: left;
-		margin: 12px -2px 0 25px;
-		cursor: pointer;
-		transform: scale(1.5);
+		    cursor: pointer;
+    float: left;
+    margin: 12px 16px 0 17px;
+    transform: scale(1.5);
 	}
 	.galeria{
 		width:90%;
@@ -733,12 +782,59 @@ p.error{
 				display:none !important;
 	}
 	p.error{
-	border: 0 none !important;
-    font-size: 33px;
-	margin:10px auto !important;
+		border: 0 none !important;
+		font-size: 33px;
+		margin:10px auto !important;
 	}
 	.crece {
 		transform: scale(2) !important;
 	}
+	.textolegal {
+		color: #000;
+		float: none;
+		font-size: 26px;
+		height: auto;
+		line-height: 40px;
+		margin: 0 5%;
+		padding: 0 0 30px;
+		position: static;
+		text-align: center;
+		top: 0;
+		width: 90%;
+		z-index: 20;
+		float: left;
+	}
+	.minimo{
+		float: left;
+		font-size: 23px;
+	}
+	.aceptoa{
+		margin: 0 0 0 130px !important;
+		width: 550px !important;
+		float: left;
+	}
+	#subir{
+		float:none;
+		margin: 30px 0;
+	}
+	#cookies p {
+		font-size: 25px;
+		line-height: 40px;
+		margin: 20px auto;
+		width: 90%;
+	}
+	#cookies .btn {
+		background-color: #fff;
+		border-radius: 8px;
+		color: #111;
+		display: block;
+		font-size: 33px;
+		font-weight: bold;
+		margin: 0 auto;
+		padding: 9px 0;
+		width: 210px;
+	}
+
+
 }
 	

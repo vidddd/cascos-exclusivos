@@ -57,6 +57,7 @@ function getItems($state,$inicio,$items) {
 		}
 
 		$html .= '<div class="clear"></div>';
+
 		if ($inicio == 1)
 		{
 			if ($i>$items-1)

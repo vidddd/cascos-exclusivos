@@ -40,13 +40,13 @@ if (!isset($_SESSION['USUARIO']) && !$_SESSION['USUARIO'] == md5(get_IP())){ hea
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script>
 	 $(document).ready(function(){
-		llenar(0,1);
+		llenar(1,1);
 
 		$(".btn-state").click(function(){
 			$('.btn-state').removeClass('active');
 			$(this).addClass('active');
 			state = $(this).attr("state");
-			llenar(0,state);
+			llenar(1,state);
 		});
 	 });
 
