@@ -1,5 +1,5 @@
 <?php
-ini_set('memory_limit', '2048M');
+ini_set('memory_limit', '12048M');
 /*
 *	!!! THIS IS JUST AN EXAMPLE !!!, PLEASE USE ImageMagick or some other quality image processing libraries
 */

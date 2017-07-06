@@ -2,14 +2,14 @@
 
 {% block content %}
 <div id="pagina1" class="pagina">
-   	<h1>¡Haz una foto con tus cascos, súbela<br /> y gana premios llenos de ritmo!</h1>
-    <p>Los 1000 primeros participantes conseguirán <br />una suscripción por un mes a Spotify&reg; Premium.<p>
-    <p>Las fotos más divertidas y originales darán acceso <br />al concierto que Efecto Pasillo ofrecerá en exclusiva <br />en uno de nuestros restaurantes. <br />¡25 entradas dobles!</p>
-    <p class="participap"><a href="index.php?participa=1" class="rojo boton">Participar</a></p>
+   	<h1>¡Sube una foto disfrutando de tus cascos<br /> y gana premios llenos de ritmo!</h1>
+    <p>Los 1000 primeros participantes conseguirán <br />una suscripción por un mes a Spotify&reg; Premium<p>
+    <p>Las fotos más divertidas y originales darán acceso <br />al concierto que Efecto Pasillo ofrecerá en exclusiva <br />en uno de nuestros restaurantes <br /> ¡25 entradas dobles!</p>
+    <p class="participap"><a href="index.php?participa=1" class="rojo boton" onclick="ga('send', 'event', 'Botón', ' Home_Participar ');" >Participar</a></p>
 
-    <p class="loginfb"><button class="rojo boton" onclick="myFacebookLogin()">Participar</button></p>
+    <p class="loginfb"><button class="rojo boton" onclick="myFacebookLogin()" >Participar</button></p>
 
-    <p><a class="azul boton" href="index.php?galeria=1">Galería</a></p>
+    <p><a class="azul boton" href="index.php?galeria=1" onclick="ga('send', 'event', 'Botón', ' Home_Galeria ');">Galería</a></p>
     <p class="mini">¿Todavía no tienes los cascos? <br />Consíguelos con la compra de tu McMenú<sup>®</sup> Grande +1€</p>
 </div>
 <script>
@@ -34,5 +34,5 @@ function myFacebookLogin() {
 {% block ventana %}
 {% endblock %}
 {% block legalfooter %}
-<div class="textolegal">Promoción válida del 6/07/17 al 18/07/17, ambos inclusive. Bases notariales, política de privacidad y restaurantes adheridos <a href="#" target="_blank">aquí</a>.</div>
+<div class="textolegal">Promoción válida del 06/07/17 al 18/07/17, ambos inclusive. Un casco exclusivo por la compra de un McMenú® grande, o Menú Salad Lovers, más un euro. <a href="http://www.mcdonalds.es/sites/default/files/BASES%20LEGALES%20Promo%20Cascos%20McDonalds.pdf" target="_blank" onclick="ga('send', 'event', 'Botón', ' Bases_Notariales ');">Bases notariales</a>, <a href="http://www.mcdonalds.es/sites/default/files/POLITICA%20DE%20PRIVACIDAD%20CASCOS.pdf" target="_blank"  onclick="ga('send', 'event', 'Botón', ' Politica_privacidad ');">política de privacidad</a> y Restaurantes adheridos <a href="http://www.mcdonalds.es/sites/default/files/Restaurantes%20Adheridos%20Cascos.pdf" target="_blank"  onclick="ga('send', 'event', 'Botón', ' Restaurantes_Adheridos ');">aquí</a></div>
 {% endblock %}

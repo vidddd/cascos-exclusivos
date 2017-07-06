@@ -10,11 +10,11 @@
         <form>
 
           {% if texto != '' %}
-            <div class="miniaturas">
+          <div class="miniaturas">
               {% if fotos %}
               {% for foto in fotos %}
               <div class="item">
-                  <div class="num">{{ foto.id }}</div>
+                  <div class="num">{{ loop.index0 }}</div>
                   <div class="imagen">
                       <img src="{{ foto.foto }}" />
                     </div>
@@ -22,8 +22,9 @@
                       {{ foto.nombre }} {{ foto.apellidos }}
                     </div>
                 </div>
-                </div>
+
               {% endfor %}
+          </div>
                 <p><a href="index.php?galeria=1" class="boton2 azul">Ver Todo</a></p>
               {% else %}
                     <p>Lo sentimos, no hay resultados para la búsqueda realizada.</p>
@@ -31,10 +32,9 @@
               {% endif %}
           {% else %}
           <div class="miniaturas">
-
             {% for foto in fotos %}
             <div class="item">
-                <div class="num">{{ foto.id }}</div>
+                <div class="num">{{ (fotos[0].total - pag) * 6 + loop.index0 + 1 }}</div>
                 <div class="imagen">
                     <img src="{{ foto.foto }}" />
                   </div>
@@ -47,9 +47,9 @@
           {% endif %}
 
         <div class="inferior">
-        	  <p>{% if anterior != 0 %}<a href="index.php?galeria=1&pagina={{ anterior }}" class="boton2 azul">Atrás</a>{% endif %}
-            {% if fotos[0].total >= siguiente %}<a href="index.php?galeria=1&pagina={{ siguiente }}" class="boton2 azul">Siguiente</a>{% endif %}</p>
-            <p><a href="index.php" class="boton2 rojo">Participar</a></p>
+        	  <p>{% if anterior != 0 %}<a href="index.php?galeria=1&pagina={{ anterior }}" class="boton2 azul" onclick="ga('send', 'event', 'Botón', ' Galeria_Atras ');">Atrás</a>{% endif %}
+            {% if fotos[0].total >= siguiente %}<a href="index.php?galeria=1&pagina={{ siguiente }}" class="boton2 azul" onclick="ga('send', 'event', 'Botón', ' Galeria_Siguiente ');">Siguiente</a>{% endif %}</p>
+            <p><a href="index.php" class="boton2 rojo" onclick="ga('send', 'event', 'Botón', ' Galeria_Participa ');">Participar</a></p>
         </div>
     </div>
     <script type="text/javascript">

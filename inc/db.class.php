@@ -39,15 +39,16 @@ class Database{
                  return false;
              }
       }
+
       public function getParticipaciones($pag){
             $this->db->orderBy("id","desc");
             $this->db->page = $pag;
             // set page limit to 2 results per page. 20 by default
             $this->db->pageLimit = 6;
-  $this->db->where("estado", 2);
-            //  print_r($this->db->getLastQuery()); die;
-             $ciudades = $this->db->paginate('participaciones', $pag);
+            $this->db->where("estado", 2);
 
+             $ciudades = $this->db->paginate('participaciones', $pag );
+  //  print_r($this->db->getLastQuery()); die;
              $ciudades[0]['total']=$this->db->totalPages;
 
              return $ciudades;

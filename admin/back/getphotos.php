@@ -16,7 +16,7 @@ function getItems($state,$inicio,$items) {
 		$order = "order by time desc";
 		$limits =  "limit ".$inicio.",".$items;
 		$i=0;
-		echo $sql = "select * from participaciones ".$where." ".$order." ".$limits.";";
+		$sql = "select * from participaciones ".$where." ".$order." ".$limits.";";
 		$cadena = "";
 
 		$html = "";
@@ -45,7 +45,6 @@ function getItems($state,$inicio,$items) {
 							  <p>'.utf8_encode($obj->nombre).'</p>
 							</div>
 							 <div class="btn_red">
-
 												'.$btns.'
 							 </div>
 						  </div>';

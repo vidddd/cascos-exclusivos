@@ -4,7 +4,7 @@
 <form id="form1" method="post" action="index.php" novalidate="novalidate">
 <div id="pagina2" class="pagina" style="display:">
    	<h1>REGÍSTRATE</h1>
-    <p>Rellena este formulario para poder ponernos <br />en contacto contigo si resultas ganador.</p>
+    <p>Rellena este formulario para poder ponernos <br />en contacto contigo si resultas ganador</p>
 
     <table cellpadding="0" cellspacing="0" border="0" class="miformulario">
     	  <tr>
@@ -29,10 +29,10 @@
     <p class="error error4" style="display:none;"></p>
 	<p>
 		<div class="azul boton2 aceptoa"><input type="checkbox" class="micheck" name="micheck" id="micheck" /> <span class="minimo">acepto bases notariales y política de privacidad</span></div>
-		   <a href="#" class="rojo boton2" id="subir" onclick="validate();">Subir foto</a>
+		   <a href="#" class="rojo boton2" id="subir" onclick="validate();ga('send', 'event', 'Botón', ' Registro_Subir_Foto ');">Subir foto</a>
         <input type="hidden" id="cropOutput" name="cropOutput" required style="" /><br />
 	</p>
-      <p class="galeriap"><a class="azul boton" href="index.php?galeria=1">Galería</a></p>
+      <p class="galeriap"><a class="azul boton" href="index.php?galeria=1" onclick="ga('send', 'event', 'Botón', ' Registro_Galeria ');">Galería</a></p>
 </div>
 {% endblock %}
 
@@ -41,30 +41,27 @@
 	<div class="aspa"><img src="images/cerrar.png" class="cerrar" onclick="cerrarVentana2();" /></div>
     <div class="contenedor" id="gracias" style="display:none">
         <h2>¡Gracias por participar!</h2>
-        <p>Si eres uno de los 1000 primeros, pronto recibirás <br />en tu correo todo lo necesario para activar tu suscripción por un mes a Spotify&reg; Premium.</p>
-        <p>Si tu foto es una de las 25 más divertidas y originales, <br />te enviaremos tu entrada doble para el concierto <br /> de Efecto Pasillo. </p>
+        <p>Si eres uno de los 1000 primeros, pronto recibirás <br />en tu correo todo lo necesario para activar tu suscripción por un mes a Spotify&reg; Premium</p>
+        <p>Si tu foto es una de las 25 más divertidas y originales, <br />te enviaremos tu entrada doble para el concierto de<br /> Efecto Pasillo</p>
         <p>¡Comparte para que tus amigos también puedan participar!</p>
         <p><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fcascos.promofb.es&amp;src=sdkpreparse" target="_blank" class="azul boton compartir">Compartir</a></p>
     </div>
     <div class="contenedor" id="yaparticipado" style="display:none">
         <h2>¡PAUSE!</h2>
-        <p>Parace que ya has participado en el consurso. <br />Te avisaremos por email si resultas ganador.</p>
+        <p>Parace que ya has participado en el consurso <br />Te avisaremos por email si resultas ganador</p>
         <p>¡MUCHA SUERTE!</p>
     </div>
 </div>
-
 <div id="ventana2" style="display:none">
 	<div class="aspa"><img src="images/cerrar.png" class="cerrar" onclick="cerrarVentana3();" /></div>
     <div class="contenedor" id="subidor">
     	<div id="cropContainer"></div>
       <input type="button" id="subir2" value="SUBIR FOTO" style="visibility:hidden;" />
-      <input type="submit" name="submit4" id="submit4" value="Enviar" class="boton4 azul" style="display:none" />
+      <input type="submit" name="submit4" id="submit4" value="Enviar" onclick="ga('send', 'event', 'Botón', ' Subir_Enviar ');" class="boton4 azul" style="display:none" />
     </div>
     		</form>
 </div>
-
 <div id="resalto" style="display:none;"></div>
-
     {% if mensaje == 1 %}
     <script>
         $("#subidor").hide(); $("#ventana").show(); $("#gracias").show();
@@ -78,5 +75,5 @@
 {% endblock %}
 
 {% block legalfooter %}
-<div class="textolegal">Promoción válida del 6/07/17 al 18/07/17, ambos inclusive. Bases notariales, política de privacidad y restaurantes adheridos <a href="#" target="_blank">aquí</a>.</div>
+<div class="textolegal">Promoción válida del 06/07/17 al 18/07/17, ambos inclusive. Un casco exclusivo por la compra de un McMenú® grande, o Menú Salad Lovers, más un euro. <a href="http://www.mcdonalds.es/sites/default/files/BASES%20LEGALES%20Promo%20Cascos%20McDonalds.pdf" target="_blank" onclick="ga('send', 'event', 'Botón', ' Bases_Notariales ');">Bases notariales</a>, <a href="http://www.mcdonalds.es/sites/default/files/POLITICA%20DE%20PRIVACIDAD%20CASCOS.pdf" target="_blank"  onclick="ga('send', 'event', 'Botón', ' Politica_privacidad ');">política de privacidad</a> y Restaurantes adheridos <a href="http://www.mcdonalds.es/sites/default/files/Restaurantes%20Adheridos%20Cascos.pdf" target="_blank"  onclick="ga('send', 'event', 'Botón', ' Restaurantes_Adheridos ');">aquí</a></div>
 {% endblock %}

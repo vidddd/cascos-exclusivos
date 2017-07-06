@@ -18,6 +18,15 @@
         <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/croppic.js"></script>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-79453141-3', 'auto');
+            ga('send', 'pageview');
+        </script>
     </head>
     <body>
       <script>
@@ -32,11 +41,11 @@
          //alert('The person is logged into Facebook, but not your app.111');
    		FB.login(function(response) {
      		  if (response.status === 'connected') {
-     		    alert('Logged into your app and Facebook.222');
+     		   // alert('Logged into your app and Facebook.222');
           //  $(".loginfb").hide();$(".participap").show();
      		  } else if (response.status === 'not_authorized') {
      		    //alert(' The person is logged into Facebook, but not your app.222');
-          //  $(".participap").hide();
+           $(".participap").show();$(".loginfb").hide();
      		  } else {
             window.location="https://cascos.promofb.es";
      		    //alert('The person is not logged into Facebook, so were not sure if they are logged into this app or not.');
@@ -48,7 +57,7 @@
        } else {
          // The person is not logged into Facebook, so we're not sure if
          // they are logged into this app or not.
-         $(".participap").hide();
+         $(".participap").hide();  $(".loginfb").show();
          //window.location="https://cascos.promofb.es";
          //alert('Please log ' +  'into Facebook.');
        }
@@ -106,6 +115,7 @@
       $("#fbid").val(response.id);
     });
   }
+
 </script>
 		<div id="wrapper">
 			{{ include('header.html') }}

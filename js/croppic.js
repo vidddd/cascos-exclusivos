@@ -402,8 +402,8 @@
 			var cropControlZoomMuchOut =     '';
 			var cropControlRotateLeft =      '';
 	        var cropControlRotateRight =     '';
-	        var cropControlCrop =            '<span class="cropControlCrop boton3 azul">Aceptar</span>';
-			var cropControlReset =           '<span class="cropControlReset boton3 rojo">Cancelar</span>';
+	        var cropControlCrop =            '<span class="cropControlCrop boton3 azul" onclick="ga("send", "event", "Botón", " Subir_Aceptar ");">Aceptar</span>';
+			var cropControlReset =           '<span class="cropControlReset boton3 rojo" onclick="ga("send", "event", "Botón", " Subir_Cancelar ");>Cancelar</span>';
 
             var html;
 
@@ -447,7 +447,7 @@
 			that.cropControlCrop.on('click',function(){ that.crop(); });
 
 			that.cropControlReset = that.cropControlsCrop.find('.cropControlReset');
-			that.cropControlReset.on('click',function(){ cerrarVentana3(); that.reset(); });				
+			that.cropControlReset.on('click',function(){ cerrarVentana3(); that.reset(); });
 
 		},
 		initDrag:function(){

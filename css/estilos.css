@@ -199,7 +199,10 @@ p.error{
 	left:50%;
 	width:600px;
 	height:auto;
+	-webkit-transform:translate(-50%,-50%);
+	-ms-transform:translate(-50%,-50%);
 	transform:translate(-50%,-50%);
+	
 	background-color:#fff;
 	background-image:url(../images/bg_wrapper.jpg);
     background-position: center -250px;
@@ -224,7 +227,9 @@ p.error{
     height: auto;
     left: 50%;
     position: relative;
-    transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	transform: translateX(-50%);
     width: 400px;	
 }
 
@@ -399,7 +404,9 @@ p.error{
     left: 50%;
     overflow: hidden;
     position: relative;
-    transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	transform: translateX(-50%);
     width: 400px;
     z-index: 1;
 	top:0;
@@ -418,7 +425,9 @@ p.error{
     left: 50%;
     position: absolute;
     top: 420px;
-    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	transform: translateX(-50%);
     width: 542px;
     z-index: 2;
 
@@ -426,7 +435,9 @@ p.error{
 .cropControlRemoveCroppedImage {
     left: 50%;
     position: relative;
-    transform: translateX(-59%);
+    -webkit-transform: translateX(-59%);
+	-ms-transform: translateX(-59%);
+	transform: translateX(-59%);
 }
 .cropControls i.cropControlZoomIn {
     background-position: -30px 0;
@@ -443,7 +454,9 @@ p.error{
 #submit4 {
     left: 50%;
     position: relative;
-    transform: translateX(-59%);
+    -webkit-transform: translateX(-59%);
+	-ms-transform: translateX(-59%);
+	transform: translateX(-59%);
 }
 .boton3{
     border: 0 none;
@@ -481,7 +494,11 @@ p.error{
 }
 
 .crece {
-    transform: scale(1.5) !important;
+	-webkit-transform: scale(1.5) !important;
+	-ms-transform: scale(1.5) !important;
+	transform: scale(1.5) !important;
+	
+	
 }
 
 .galeriap{
@@ -539,7 +556,9 @@ p.error{
     padding: 9px 0;
     width: 140px;		
 }
-
+.final p{
+	width:70%;	
+}
 @media only screen and (max-width: 810px) and (orientation:portrait){
 	#cabecera{
 	padding-bottom:30px;	
@@ -557,6 +576,9 @@ p.error{
 		line-height: 38px;
 		margin: 0;
 		padding: 0 !important;
+		width:810px !important;
+		height:auto;
+		overflow:hidden;
 	}
 	p{
 		font-size: 35px;
@@ -664,7 +686,13 @@ p.error{
 		    cursor: pointer;
     float: left;
     margin: 12px 16px 0 17px;
-    transform: scale(1.5);
+	-webkit-transform: scale(1.5);
+	-ms-transform: scale(1.5);
+	transform: scale(1.5);
+	
+	
+	
+	
 	}
 	.galeria{
 		width:90%;
@@ -787,7 +815,11 @@ p.error{
 		margin:10px auto !important;
 	}
 	.crece {
-		transform: scale(2) !important;
+	-webkit-transform: scale(2) !important;
+	-ms-transform: scale(2) !important;
+	transform: scale(2) !important;
+	
+	
 	}
 	.textolegal {
 		color: #000;
@@ -835,6 +867,11 @@ p.error{
 		width: 210px;
 	}
 
+	.final p{
+		width:90%;	
+	}
+	
 
+	
 }
 	

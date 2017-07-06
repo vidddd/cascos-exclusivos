@@ -15,13 +15,15 @@ $db = new Database();
 
 if($_POST['nombre']) {
    $nombre = $_POST['nombre']; $apellidos = $_POST['apellidos']; $email = $_POST['email']; $foto = $_POST['cropOutput'];$fbid = $_POST['fbid'];
-   if ($db->existeEmail($email) || $db->existeFbid($fbid) || $fbid == '') {
+   if ($db->existeEmail($email) || $db->existeFbid($fbid) ) {
        echo $twig->render('home.html', array("mensaje" => 2));
-   } else {
+   }  else {
        $db->insertaParticipacion($nombre, $apellidos, $email, $foto, $fbid);
        echo $twig->render('home.html', array("mensaje" => 1));
    }
 
+}else if ($_GET['final']) {
+    echo $twig->render('final.html', array("URLHOME" => URL_HOME, "locations" => $locations));
 } else {
   if ($_GET['galeria'] == 1) {
     if($_POST['textob']) {
@@ -37,7 +39,7 @@ if($_POST['nombre']) {
       $siguiente = $pag + 1;
       $fotos = $db->getParticipaciones($pag);
 
-      echo $twig->render('galeria.html', array("fotos" => $fotos, "anterior" => $anterior, "siguiente" => $siguiente, "texto" => ''));
+      echo $twig->render('galeria.html', array("fotos" => $fotos, "pag" => $pag, "anterior" => $anterior, "siguiente" => $siguiente, "texto" => ''));
    }
 
  } else if ($_GET['participa'] == 1){
